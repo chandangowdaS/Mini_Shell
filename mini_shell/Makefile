@@ -16,6 +16,3 @@ clean:
 	rm -f Mini_Shell libdynamic.so
 
 
-
-
-

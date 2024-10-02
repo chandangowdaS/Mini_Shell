@@ -42,6 +42,19 @@ The Mini Shell handles:
 - `main.h`: The header file containing necessary includes and declarations.
 - `external_commands.txt`: A file containing external commands that can be executed by the shell.
 
+## Makefile Integration
+
+The **Makefile** automates the compilation of the dynamic library and the Mini Shell executable:
+
+1. **`dynamic`**: Compiles the `mini_func.c` file as a shared library `libdynamic.so`.
+   - This uses the `-fPIC` flag to ensure position-independent code, making it usable as a shared object.
+
+2. **`Mini_Shell`**: Links the main shell code with the dynamic library `libdynamic.so`, producing the executable file `Mini_Shell`.
+
+3. **`run`**: Sets the `LD_LIBRARY_PATH` to include the current directory and runs the `Mini_Shell`.
+
+4. **`clean`**: Cleans up the generated executable and shared library.
+
 ## Setup
 1. Clone the repository:
    ```bash
@@ -72,7 +85,3 @@ The Mini Shell handles:
 
 ## License
 This project is licensed under the MIT License.
-
----
-
-This README covers the essential features of your Mini Shell project. It gives a clear overview of the project, instructions for setting it up, and its usage.
