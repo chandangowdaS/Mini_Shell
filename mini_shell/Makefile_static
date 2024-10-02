@@ -1,0 +1,14 @@
+C_FILES= *.c
+O_FILES= *.o
+
+$(O_FILES): $(C_FILES)
+	gcc -c $^
+
+mini_Shell: $(O_FILES)
+	gcc $(O_FILES) -o mini_Shell
+
+run: mini_Shell
+	./mini_Shell
+
+clean: 
+	rm *.o mini_Shell
